@@ -1,0 +1,31 @@
+.loginInfo  {
+	border-radius: 15px;
+	font-size: 100%;
+	margin: 5px;
+	text-align: center;
+}
+
+.login {
+	margin-top: 10%;
+	text-align: center;
+}
+
+div {
+	padding: 5px;
+}
+
+body {
+	background-color: #6495ED;
+}
+
+img {
+	width: 30%;
+}
+
+.mytimeimg {
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}

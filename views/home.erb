@@ -1,0 +1,46 @@
+<h1>Home Page<i class="fa fa-home" aria-hidden="true"></i></h1>
+
+
+
+<div>
+
+	<div>
+		<a href="/home/location/@locations.find_by(id:1).name"><%= @locations.find_by(id:1).name %></a>
+		<i class="fa fa-television" aria-hidden="true"></i>
+		<form action="/home/<%= @locations.find_by(name: "TV Room").id %>/comment" method="post">
+			<input type="hidden" name="" value="">	
+			<textarea name="comment" id="" cols="30" rows="5"></textarea>
+			<div>
+				<button>Post comment</button>
+			</div>		
+		</form>
+
+		<% @tv.each do |comment| %>
+			<hr>
+			<p><%= comment.body %></p>
+		<% end %>
+
+	</div>
+
+	<hr>
+
+	<div>
+		<a href="/home/location/@locations.find_by(id:2).name"><%= @locations.find_by(id:2).name %></a>
+		<i class="fa fa-line-chart" aria-hidden="true"></i>
+		<form action="/home/<%= @locations.find_by(name: "Meeting Room").id %>/comment" method="post">
+			<input type="hidden" name="" value="">	
+			<textarea name="comment" id="" cols="30" rows="5"></textarea>
+			<div>
+				<button>Post comment</button>
+			</div>		
+		</form>
+
+		<% @meeting.each do |comment| %>
+			<hr>
+			<p><%= comment.body %></p>
+		<% end %>
+	</div>
+	
+</div>
+
+
