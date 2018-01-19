@@ -50,20 +50,12 @@ end
 
 post '/home' do
 	user = User.find_by(email: params[:email])
-	if user && user.authenticate(params[:password])
-		session[:user_id] = user.id
-		redirect '/home'
-	else
-		erb :login
-	end	
+		erb :login	
 end
 
 
 #HOME PAGE
 get '/home' do
-	if !session[:user_id]
-		return redirect '/login'
-	end	
 	@comments	= Comment.all
 
 	@location = Location.all
@@ -123,4 +115,25 @@ delete '/display/:id' do
 	comment.destroy
   redirect '/home'
 end
+
+post '/session' do
+	# Check email
+	user = User.find_by(email: params[:email])
+
+	# check password
+	if user && user.authenticate(params[:password])
+		
+		session[:user_id] = user.id 
+		redirect '/home'
+	else
+		erb :login
+	end	
+end	
+
+delete '/session' do
+	session[:user_id] = nil
+	redirect '/login'
+end
+
+
 
