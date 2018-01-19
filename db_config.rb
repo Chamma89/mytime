@@ -1,6 +1,6 @@
 # settings for activerecord
 require 'active_record'
-require 'pg'
+
 
 
 options = {

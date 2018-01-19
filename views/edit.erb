@@ -1,4 +1,8 @@
-<% @meeting.each do |comment| %>
-			<hr>
-			<p><%= comment.body %></p>
-		<% end %>
+<p><%= @edit_comment.body %></p>
+
+<form action="/home/edit/<%= @edit_comment.id %>" method="post">
+	<input type="hidden" name="_method" value="put">
+	<input type="text" name="comment_update" value="<%= @edit_comment.body %>">
+	<button>submit</button>
+</form>	
+

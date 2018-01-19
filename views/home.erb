@@ -5,42 +5,61 @@
 <div>
 
 	<div>
-		<a href="/home/location/@locations.find_by(id:1).name"><%= @locations.find_by(id:1).name %></a>
+		<a href="/home/display/<%= @tv.id%>">TV</a>
 		<i class="fa fa-television" aria-hidden="true"></i>
-		<form action="/home/<%= @locations.find_by(name: "TV Room").id %>/comment" method="post">
+
+		<form action="/home/<%= @tv.id %>/comment" method="post">
+
 			<input type="hidden" name="" value="">	
-			<textarea name="comment" id="" cols="30" rows="5"></textarea>
+
+			<textarea id="test" name="comment" id="" cols="30" rows="3" placeholder="Insert Comment">		
+			</textarea>
+
+
+			  <div><input type="time" name="start_time" value="start">start time</div>
+			  <div><input type="time" name="end_time" value="end">          end time</div>
+
 			<div>
-				<button>Post comment</button>
+				<button>Booking</button>
 			</div>		
 		</form>
 
-		<% @tv.each do |comment| %>
+			<% @tv_comment.each do |comment| %>
 			<hr>
-			<p><%= comment.body %></p>
-		<% end %>
+			
+				<p><%= comment.body %></p><p><%= comment.start %>:00 -  <%= comment.finish %>:00</p>
+			
+			<% end %>
 
 	</div>
 
-	<hr>
+	
 
 	<div>
-		<a href="/home/location/@locations.find_by(id:2).name"><%= @locations.find_by(id:2).name %></a>
+		<a href="/home/display/<%= @meeting.id%>">Meeting Room</a>
 		<i class="fa fa-line-chart" aria-hidden="true"></i>
-		<form action="/home/<%= @locations.find_by(name: "Meeting Room").id %>/comment" method="post">
+
+		<form action="/home/<%= @meeting.id %>/comment" method="post">
+
 			<input type="hidden" name="" value="">	
-			<textarea name="comment" id="" cols="30" rows="5"></textarea>
+
+			<textarea id="test"  name="comment" id="" cols="30" rows="3" placeholder="Insert Comment">
+			</textarea>
+
+				<div><input type="time" name="start_time" value="start">start time</div>
+			  	<div><input type="time" name="end_time" value="end"> end time</div>
+
 			<div>
-				<button>Post comment</button>
+				<button>Booking</button>
 			</div>		
 		</form>
 
-		<% @meeting.each do |comment| %>
+			<% @meeting_comment.each do |comment| %>
 			<hr>
-			<p><%= comment.body %></p>
-		<% end %>
+			
+				<p><%= comment.body %></p><p><%= comment.start %>:00 -  <%= comment.finish %>:00</p>
+			
+			<% end %>
 	</div>
 	
 </div>
-
-

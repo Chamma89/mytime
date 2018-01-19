@@ -1,0 +1,13 @@
+<% @tv_comment.each do |comment| %>
+	<hr>
+	<form action="/home/edit/<%= comment.id%>">
+		<p><%= comment.body %><button>edit</button></p><p><%= comment.start %>:00 -  <%= comment.finish %>:00</p>
+	</form>
+
+	<form action="/display/<%= comment.id%>" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<button>Delete</button>
+	</form>		
+<% end %>	
+
+

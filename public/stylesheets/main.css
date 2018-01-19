@@ -1,3 +1,7 @@
+* {
+	font-family: 'Roboto Mono', monospace;
+}
+
 .loginInfo  {
 	border-radius: 15px;
 	font-size: 100%;
@@ -12,6 +16,7 @@
 
 div {
 	padding: 5px;
+	text-align: center;
 }
 
 body {
@@ -28,4 +33,21 @@ img {
 
 h1 {
 	text-align: center;
+}
+
+button {
+	border-radius: 15px;
+	margin: 5px;
+}
+
+.welcome {
+	text-align: center;
+}
+
+a:hover {
+	color: blue;
+}
+
+#test {
+	text-align: none;
 }
